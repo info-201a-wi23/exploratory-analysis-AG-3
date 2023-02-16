@@ -2,7 +2,7 @@ data <- read.csv("Info201 Dataset.csv")
 # Create the frequency table
 age_freq <- table(data$AGE)
 
-# Create the bar chart2
+# Create the bar chart
 barplot(age_freq, 
         main = "Frequency of Age in the Dataset", 
         xlab = "Age", 
