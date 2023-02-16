@@ -57,7 +57,6 @@ Write a summary paragraph of findings that includes the 5 values calculated from
 ### Table
 
 Include a table of aggregate information
-
 Describe why you included the table and what information it reveals
 
 ### Chart 1
@@ -73,9 +72,16 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ### Chart 2
 
-Include a chart
-
 Describe why you chose this chart and what information it reveals
+I chose a bar chart to show the frequency of age in the dataset since bar chart is a useful chart for showing the distribution or frequency of a categorical variable.
+
+The information revealed by this chart is the number of instances that each age appeared in the table This can help identify the most common and least common ages in the dataset, and provide insight into the age distribution of the data.
+
+Besides, this chart can also be used to identify any trends or patterns in the age distribution. For example, if there is a large spike in the frequency of a particular age group, this may indicate a specific demographic that is overrepresented in the dataset.
+
+Therefore, a bar chart is a simple and effective way to show the frequency of age in the dataset, and can help provide insight into the age distribution of the data.
+``````{r, echo = FALSE, code = readLines("chart2.R")}
+```
 
 ### Chart 3
 
