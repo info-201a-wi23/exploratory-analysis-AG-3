@@ -74,7 +74,6 @@ View(agg_table)
 We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition, we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
 
 
-
 ### Chart 1
 
 Include a chart
