@@ -4,7 +4,7 @@ library(ggplot2)
 # Read the CSV file
 data <- read.csv("Info201 Dataset.csv")
 
-# Create the frequency table
+# Create the frequency table 2
 age_freq <- table(data$AGE)
 
 Age <- data$AGE
