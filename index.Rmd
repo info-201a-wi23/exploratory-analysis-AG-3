@@ -2,10 +2,28 @@
 title: "Exploratory Analysis"
 output: html_document
 ---
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# source all R files
+source("Chart1.R")
+source("Chart3.R")
+```
 
 ## Project title
 
 Break the Gender & Age Bias in Traffic
+<<<<<<< HEAD
+
+### Authors
+
+Aaron He, 
+
+### Date
+
+Winter 2023
+=======
 
 
 ### Authors
@@ -25,6 +43,7 @@ Meng Sun
 
 Winter 2023
 
+>>>>>>> b911f5f0a3ac8c9c3d2c706dfa8018b9b25f6d14
 
 ### Abstract
 
@@ -65,14 +84,21 @@ print(summary_info)
 We have found or calculated five relatively essential values from the database. First, we found some traffic accidents in the database where the driver was 999 or 0 years old, which is unrealistic. When we culled the database, we found that there were still 82,066 observations. This number indicates that such an extensive database is sufficient to help us complete our analysis and investigation. We also found that the average age of drivers involved in accidents was 40.3 years. This figure is close to our expectations. In addition, we also calculated the number of casualties for male drivers and female drivers in the new database, which were 54,273 cases and 27,716 cases, respectively, reflecting the fact that the total number of accidents for male drivers is much larger than the total number of casualties for female drivers, even twice as many. Finally, we calculated the mean value of driver injuries in these accidents, which was 2.45, suggesting that, excluding individual outliers, there may be more accidents with minor injuries than serious injuries.
 
 
+setwd("/Users/aaron/Desktop")
+np_data <- read.csv("Info201 Dataset.csv")
 ### Table
 
+<<<<<<< HEAD
+
+Include a table of aggregate information
+=======
 ``````{r, echo = FALSE, code = readLines("table.R")}
 View(agg_table)
 ```
 
 We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition, we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
 
+>>>>>>> b911f5f0a3ac8c9c3d2c706dfa8018b9b25f6d14
 
 ### Chart 1
 
@@ -80,9 +106,15 @@ Include a chart
 
 Describe why you chose this chart and what information it reveals
 
-Here's an example of how to run an R script inside an RMarkdown file:
+The scatterplot can be in providing additional information based on the dataset. Specifically, the chart provides more detailed information about the relationship between gender and the number of car accidents.
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+The table depicted that there were a total number of collisions for each gender group, which may provide additional insight into the relationship between gender and car accidents. In detail, the group of male is easier to have the car accidents.
+
+Overall, including the table helps to provide a more complete picture of the data and can provide additional insight into the relationship between gender and car accidents.
+
+
+```{r, echo = FALSE, code = readLines("Chart1.R")}
+C1
 ```
 
 ### Chart 2
@@ -104,3 +136,11 @@ Therefore, a bar chart is a simple and effective way to show the frequency of ag
 Include a chart
 
 Describe why you chose this chart and what information it reveals
+
+This chart provides insight into the relationship between gender and degree of injury, and can help identify patterns or trends in the injury data. We filter out the data under gender "Not Reported".
+
+The stacked bar chart with percentage shows the proportion of different injury level within each gender. As shown by graph, the percentage of having injury level between 0-2.5 are mostly same for both gender. But for the percentage of having injury level 4.0-6.0, male cases are greatly larger than female's one. So we can state that, male are in a higher risk of getting seriously injured. 
+
+```{r, echo = FALSE, code = readLines("Chart3.R")}
+C3
+```
