@@ -166,7 +166,7 @@ The information revealed by this chart is the number of instances that each age 
 Besides, this chart can also be used to identify any trends or patterns in the age distribution. For example, if there is a large spike in the frequency of a particular age group, this may indicate a specific demographic that is overrepresented in the dataset.
 
 Therefore, a bar chart is a simple and effective way to show the frequency of age in the dataset, and can help provide insight into the age distribution of the data.
-```{r, echo = TRUE, code = readLines("Chart2.R")}
+```{r, echo = TRUE, code = readLines("chart2.R")}
 C2
 ```
 
