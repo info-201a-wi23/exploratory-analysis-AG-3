@@ -2,18 +2,26 @@
 title: "Exploratory Analysis"
 output: html_document
 ---
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+
+# source all R files
+source("Chart1.R")
+source("Chart3.R")
+```
 
 ## Project title
 
-Give your project a concise, interesting title that summarizes the entirety of your project
+Break the Gender & Age Bias in Traffic
 
 ### Authors
 
-Names of your team members
+Aaron He, 
 
 ### Date
 
-Winter 2022
+Winter 2023
 
 ### Abstract
 
@@ -54,7 +62,10 @@ What challenges or limitations might you need to address with your project idea 
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
+setwd("/Users/aaron/Desktop")
+np_data <- read.csv("Info201 Dataset.csv")
 ### Table
+
 
 Include a table of aggregate information
 
@@ -66,9 +77,15 @@ Include a chart
 
 Describe why you chose this chart and what information it reveals
 
-Here's an example of how to run an R script inside an RMarkdown file:
+The scatterplot can be in providing additional information based on the dataset. Specifically, the chart provides more detailed information about the relationship between gender and the number of car accidents.
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+The table depicted that there were a total number of collisions for each gender group, which may provide additional insight into the relationship between gender and car accidents. In detail, the group of male is easier to have the car accidents.
+
+Overall, including the table helps to provide a more complete picture of the data and can provide additional insight into the relationship between gender and car accidents.
+
+
+```{r, echo = FALSE, code = readLines("Chart1.R")}
+C1
 ```
 
 ### Chart 2
@@ -82,3 +99,11 @@ Describe why you chose this chart and what information it reveals
 Include a chart
 
 Describe why you chose this chart and what information it reveals
+
+This chart provides insight into the relationship between gender and degree of injury, and can help identify patterns or trends in the injury data. We filter out the data under gender "Not Reported".
+
+The stacked bar chart with percentage shows the proportion of different injury level within each gender. As shown by graph, the percentage of having injury level between 0-2.5 are mostly same for both gender. But for the percentage of having injury level 4.0-6.0, male cases are greatly larger than female's one. So we can state that, male are in a higher risk of getting seriously injured. 
+
+```{r, echo = FALSE, code = readLines("Chart3.R")}
+C3
+```
