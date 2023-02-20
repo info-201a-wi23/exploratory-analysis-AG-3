@@ -19,4 +19,6 @@ C2 <- ggplot(data = data.frame(Age = names(age_freq), Frequency = age_freq), aes
   theme(plot.title = element_text(size = 20, face = "bold"), 
         axis.title = element_text(size = 16), 
         axis.text = element_text(size = 14), 
-        axis.text.x = element_text(angle = 90, size = 11, vjust = 0.5)) 
+        axis.text.x = element_text(angle = 90, size = 11, vjust = 0.5)) +
+  scale_x_discrete(breaks = seq(0,100,10))
+C2
