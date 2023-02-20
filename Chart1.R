@@ -1,4 +1,3 @@
-setwd("/Users/aaron/Desktop")
 np_data <- read.csv("Info201 Dataset.csv")
 Chart_1 <- np_data %>% group_by(SEXNAME) %>% summarize(Sum_Collision = sum(MAN_COLL))
 C1 <- ggplot(Chart_1, aes(x="", y=Sum_Collision, fill=SEXNAME)) +
