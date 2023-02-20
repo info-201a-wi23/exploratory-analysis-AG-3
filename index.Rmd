@@ -94,7 +94,7 @@ We have found or calculated five relatively essential values from the database. 
 
 ### Table
 
-``````{r, echo = FALSE, code = readLines("table")}
+``````{r, echo = FALSE, code = readLines("table.R")}
 dataset <- read.csv("Info201 Dataset.csv",stringsAsFactors = FALSE)
 library(dplyr)
 
