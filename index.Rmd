@@ -158,6 +158,7 @@ Besides, this chart can also be used to identify any trends or patterns in the a
 Therefore, a bar chart is a simple and effective way to show the frequency of age in the dataset, and can help provide insight into the age distribution of the data.
 
 ```{r, echo = TRUE, code = readLines("chart2.R")}
+C2
 ```
 
 
