@@ -9,21 +9,13 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 # source all R files
 source("Chart1.R")
 source("Chart3.R")
+source("summary.R")
+source("table.R")
 ```
 
 ## Project title
 
 Break the Gender & Age Bias in Traffic
-<<<<<<< HEAD
-
-### Authors
-
-Aaron He, 
-
-### Date
-
-Winter 2023
-=======
 
 
 ### Authors
@@ -43,7 +35,6 @@ Meng Sun
 
 Winter 2023
 
->>>>>>> b911f5f0a3ac8c9c3d2c706dfa8018b9b25f6d14
 
 ### Abstract
 
@@ -69,6 +60,7 @@ Winter 2023
 ### Implications
 
  
+ 
 ### Limitations & Challenges
 
  
@@ -76,30 +68,48 @@ Winter 2023
 
 ### Summary Information
 
-Create 5 different values from the dataset
+
 ``````{r, echo = FALSE, code = readLines("summary_info.R")}
 print(summary_info)
 ```
 
-We have found or calculated five relatively essential values from the database. First, we found some traffic accidents in the database where the driver was 999 or 0 years old, which is unrealistic. When we culled the database, we found that there were still 82,066 observations. This number indicates that such an extensive database is sufficient to help us complete our analysis and investigation. We also found that the average age of drivers involved in accidents was 40.3 years. This figure is close to our expectations. In addition, we also calculated the number of casualties for male drivers and female drivers in the new database, which were 54,273 cases and 27,716 cases, respectively, reflecting the fact that the total number of accidents for male drivers is much larger than the total number of casualties for female drivers, even twice as many. Finally, we calculated the mean value of driver injuries in these accidents, which was 2.45, suggesting that, excluding individual outliers, there may be more accidents with minor injuries than serious injuries.
+We have found or calculated five relatively essential values from the database. First, we found some traffic accidents in the database where the
+
+driver was 999 or 0 years old, which is unrealistic. When we culled the database, we found that there were still 82,066 observations. This number
+
+indicates that such an extensive database is sufficient to help us complete our analysis and investigation. We also found that the average age of
+
+drivers involved in accidents was 40.3 years. This figure is close to our expectations. In addition, we also calculated the number of casualties for
+
+male drivers and female drivers in the new database, which were 54,273 cases and 27,716 cases, respectively, reflecting the fact that the total
+
+number of accidents for male drivers is much larger than the total number of casualties for female drivers, even twice as many. Finally, we
+
+calculated the mean value of driver injuries in these accidents, which was 2.45, suggesting that, excluding individual outliers, there may be more
+
+accidents with minor injuries than serious injuries.
 
 
-setwd("/Users/aaron/Desktop")
-np_data <- read.csv("Info201 Dataset.csv")
 ### Table
 
-<<<<<<< HEAD
-
-Include a table of aggregate information
-=======
+ 
 ``````{r, echo = FALSE, code = readLines("table.R")}
 View(agg_table)
 ```
 
-We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition, we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
+We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows
 
->>>>>>> b911f5f0a3ac8c9c3d2c706dfa8018b9b25f6d14
+that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five
 
+equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of
+
+age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition,
+
+we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is
+
+from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
+
+ 
 ### Chart 1
 
 Include a chart
@@ -116,6 +126,7 @@ Overall, including the table helps to provide a more complete picture of the dat
 ```{r, echo = FALSE, code = readLines("Chart1.R")}
 C1
 ```
+
 
 ### Chart 2
 
