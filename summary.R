@@ -22,7 +22,7 @@ cases_M <- dataset_cleaned %>%
 summary_info$cases_Male <-nrow(cases_M)
 summary_info$cases_Male
 
-summary_info$mean_Severity <- mean(dataset_cleaned$Injury_Severity)
+summary_info$mean_Severity <- mean(dataset_cleaned$INJ_SEV)
 summary_info$mean_Severity
 
 print(summary_info)
