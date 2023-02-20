@@ -38,33 +38,80 @@ Winter 2023
 
 ### Abstract
 
-
+This project will use publicly available datasets to explore the relationships between traffic accidents and other variables like gender, age, etc. Many people believe that female drivers are more likely to be involved in car accidents and age is negatively correlated with accident rate. Our project wants to conduct analysis and see if this is a “stereotype” or “fact”.
 
 ### Keywords
 
- 
-
+Gender Bias; Sexism; Ageism; Car Accidents.
 
 ### Introduction  
 
- 
+The aim of this project is to investigate the relationship between gender, age, and automobile accidents and address the persistent stereotypes and biases surrounding the involvement of women and people of different ages in traffic accidents. Our investigation is motivated by the need to break down traditional biases and demonstrate potential relationships that may exist between these variables. Additionally, we hope to use our findings to inform car manufacturers to consider the possibility of improving their designs to create a safer road environment for everyone.
+
+We have identified three research questions to guide our investigation:
+
+What is the relationship between gender and auto accidents?
+Does age play a role in the likelihood of being involved in a crash?
+Which gender is more likely to be seriously injured in a crash?
+The investigation of these research questions is important because they have the potential to inform road safety policy, address gender bias and older driver bias, and challenge stereotypes surrounding women and older drivers. Our findings can also contribute to creating a safer and more inclusive road environment.
 
 ### Related Work  
  
+Numerous studies have investigated the relationship between gender, age, and car accidents in recent years. Some research indicates that male drivers are involved in more car accidents than females (Hassan et al., 2017; Ehsani et al., 2020), while other studies suggest that the gender gap in car crash involvement disappears when controlling for factors such as driving experience and exposure (Park et al., 2019). Additionally, studies have shown that older individuals tend to have fewer car accidents (Klauer et al., 2006; Chen et al., 2015).
 
+Despite extensive research on this topic, there are still many unanswered questions. For example, the relationship between gender and age in car accidents requires further investigation. Furthermore, much of the research has been conducted in developed countries, and additional studies in developing countries are needed to better understand the relationship between these variables in various cultural and socioeconomic contexts.
+
+The goal of our project is to explore these knowledge gaps and uncover new insights by analyzing publicly available datasets. By examining the relationship between gender, age, and car crashes, we hope to provide a better understanding of this complex issue and challenge any biases that may exist. Ultimately, our aim is to contribute to a safer and more equitable road environment through rigorous scientific analysis of the available data.
 
 ### The Dataset
 
- 
+ > Where did you find the data? Please include a link to the data source
+We found this data at a website. 
+
+We find this dataset on the official website of the US Department of Transportation.
+https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/2018/National/
+
+> Who collected the data?
+
+The Department of Transportation in the United States collected this data.
+
+> How was the data collected or generated?
+
+This data was collected when car accident cases happened or reported. 
+
+> Why was the data collected?
+
+This data was collected because the Department of Transportation needed to record the cases.  Insurance companies may use this analysis to determine the fee for each group of people.
+
+> How many observations (rows) are in your data?
+
+There are 84345 rows in the data, but we randomly select 20000 rows to interpret and find the potential relationships among different variables.
+
+> How many features (columns) are in the data?
+
+We cleared some redundant and useless variables (columns) and finally selected 13 columns in the data to analyze.
+
+> What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+We need to consider the actual situation when the cases and data were reported or recorded.  Some car accidents are involved with criminal judgment or financial penalty. Therefore, the report of data might include falsehood or understatement due to this power.
+
+> What are possible limitations or problems with this data? (at least 200 words)
+
+There are several limitations and potential problems with the dataset used in this project that may impact the generalizability and accuracy of the results. First, some entries in the raw data are listed as "not applicable" instead of containing an actual character or amount. This missing data can affect the output when computing and may lead to incorrect results. Additionally, the dataset is limited to car accidents reported to the police and recorded by the United States Department of Transportation, potentially excluding unreported or underreported accidents. Another potential issue is that certain variables have limited or inaccurate definitions, which could lead to incorrect conclusions. For example, the gender column only includes binary options of male and female, which does not accurately reflect the range of gender identities and expressions. Similarly, the Rur_urbname column only lists two values, rural or urban, which may not accurately represent the location of certain accidents that occur at the intersection of rural and urban areas. It is important to keep these limitations in mind when analyzing the data and interpreting the results.
+
 
 ### Implications
 
- 
- 
+ The potential implications of this research are vast, particularly for technologists, designers, and policymakers. For example, the findings could lead to the development of new vehicle safety features that are tailored to specific age and gender groups. Manufacturers could design vehicles with better safety features that take into account the physical characteristics of different age and gender groups. In addition, the results could help policymakers develop more effective road safety programs, including driver education and training programs.
+
+Moreover, insurance companies could use the results of this research to develop more effective insurance policies and rates. For instance, if the research shows that teenage drivers are at a high risk of car accidents, insurers could work with policymakers to establish driving programs and courses that are designed to reduce the risk of accidents among young drivers. Alternatively, insurers could use the research results to adjust their premiums and offer better rates to certain age and gender groups.
+
+Finally, the research findings could be used to support public health efforts to reduce the number of car accidents and related injuries. By identifying the specific age and gender groups that are at the highest risk of accidents, policymakers and public health officials could develop targeted interventions that are designed to reduce the number of accidents and improve road safety overall.
+
 ### Limitations & Challenges
 
- 
-
+Determining the amount or rate of car accidents for different genders poses a challenge, as the frequency of driving can vary between groups of people. While a simple comparison of the number of accidents between genders may provide some insight, it may not be sufficient to draw accurate conclusions. Thus, developing a formula to calculate the rate of car accidents for different genders will be necessary to ensure the results are representative and meaningful.
+Another limitation of our project is the lack of consideration of other factors that may affect car accidents. Intersectional social identities such as income, race, and ethnicity can impact a person's likelihood of being involved in a car accident, and it's important to take these factors into account to avoid drawing incomplete conclusions. For instance, lower-income individuals may not be able to afford cars with the same safety features as higher-income individuals, which could lead to higher rates of injuries in the event of an accident. By acknowledging these intersectional factors, we can ensure that our results are comprehensive and provide a more accurate picture of the relationship between gender and car accidents.
 
 ### Summary Information
 
@@ -73,48 +120,20 @@ Winter 2023
 print(summary_info)
 ```
 
-We have found or calculated five relatively essential values from the database. First, we found some traffic accidents in the database where the
-
-driver was 999 or 0 years old, which is unrealistic. When we culled the database, we found that there were still 82,066 observations. This number
-
-indicates that such an extensive database is sufficient to help us complete our analysis and investigation. We also found that the average age of
-
-drivers involved in accidents was 40.3 years. This figure is close to our expectations. In addition, we also calculated the number of casualties for
-
-male drivers and female drivers in the new database, which were 54,273 cases and 27,716 cases, respectively, reflecting the fact that the total
-
-number of accidents for male drivers is much larger than the total number of casualties for female drivers, even twice as many. Finally, we
-
-calculated the mean value of driver injuries in these accidents, which was 2.45, suggesting that, excluding individual outliers, there may be more
-
+We have found or calculated five relatively essential values from the database. First, we found some traffic accidents in the database where the driver was 999 or 0 years old, which is unrealistic. When we culled the database, we found that there were still 82,066 observations. This number indicates that such an extensive database is sufficient to help us complete our analysis and investigation. We also found that the average age of drivers involved in accidents was 40.3 years. This figure is close to our expectations. In addition, we also calculated the number of casualties for male drivers and female drivers in the new database, which were 54,273 cases and 27,716 cases, respectively, reflecting the fact that the total number of accidents for male drivers is much larger than the total number of casualties for female drivers, even twice as many. Finally, we calculated the mean value of driver injuries in these accidents, which was 2.45, suggesting that, excluding individual outliers, there may be more
 accidents with minor injuries than serious injuries.
 
 
 ### Table
 
- 
 ``````{r, echo = FALSE, code = readLines("table.R")}
 View(agg_table)
 ```
 
-We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows
-
-that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five
-
-equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of
-
-age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition,
-
-we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is
-
-from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
+We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition, we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
 
  
 ### Chart 1
-
-Include a chart
-
-Describe why you chose this chart and what information it reveals
 
 The scatterplot can be in providing additional information based on the dataset. Specifically, the chart provides more detailed information about the relationship between gender and the number of car accidents.
 
@@ -130,7 +149,6 @@ C1
 
 ### Chart 2
 
-Describe why you chose this chart and what information it reveals
 I chose a bar chart to show the frequency of age in the dataset since bar chart is a useful chart for showing the distribution or frequency of a categorical variable.
 
 The information revealed by this chart is the number of instances that each age appeared in the table This can help identify the most common and least common ages in the dataset, and provide insight into the age distribution of the data.
@@ -138,15 +156,12 @@ The information revealed by this chart is the number of instances that each age 
 Besides, this chart can also be used to identify any trends or patterns in the age distribution. For example, if there is a large spike in the frequency of a particular age group, this may indicate a specific demographic that is overrepresented in the dataset.
 
 Therefore, a bar chart is a simple and effective way to show the frequency of age in the dataset, and can help provide insight into the age distribution of the data.
+
 ```{r, echo = TRUE, code = readLines("chart2.R")}
 ```
 
 
 ### Chart 3
-
-Include a chart
-
-Describe why you chose this chart and what information it reveals
 
 This chart provides insight into the relationship between gender and degree of injury, and can help identify patterns or trends in the injury data. We filter out the data under gender "Not Reported".
 
