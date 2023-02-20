@@ -4,6 +4,8 @@ output: html_document
 ---
 ```{r setup, include=FALSE}
 library(knitr)
+library(ggplot2)
+library(dplyr)
 knitr::opts_chunk$set(echo = FALSE, message = FALSE)
 
 # source all R files
@@ -116,7 +118,7 @@ Another limitation of our project is the lack of consideration of other factors 
 ### Summary Information
 
 
-``````{r, echo = FALSE, code = readLines("summary_info.R")}
+``````{r, echo = FALSE, code = readLines("summary.R")}
 print(summary_info)
 ```
 
@@ -142,7 +144,7 @@ The table depicted that there were a total number of collisions for each gender 
 Overall, including the table helps to provide a more complete picture of the data and can provide additional insight into the relationship between gender and car accidents.
 
 
-```{r, echo = FALSE, code = readLines("Chart1.R")}
+```{r, Chart1, message=FALSE,echo=FALSE}
 C1
 ```
 
@@ -157,7 +159,7 @@ Besides, this chart can also be used to identify any trends or patterns in the a
 
 Therefore, a bar chart is a simple and effective way to show the frequency of age in the dataset, and can help provide insight into the age distribution of the data.
 
-```{r, echo = TRUE, code = readLines("chart2.R")}
+```{r, chart2, message=FALSE,echo=FALSE}
 C2
 ```
 
@@ -168,6 +170,6 @@ This chart provides insight into the relationship between gender and degree of i
 
 The stacked bar chart with percentage shows the proportion of different injury level within each gender. As shown by graph, the percentage of having injury level between 0-2.5 are mostly same for both gender. But for the percentage of having injury level 4.0-6.0, male cases are greatly larger than female's one. So we can state that, male are in a higher risk of getting seriously injured. 
 
-```{r, echo = FALSE, code = readLines("Chart3.R")}
+```{r, Chart3, message=FALSE,echo=FALSE}
 C3
 ```
