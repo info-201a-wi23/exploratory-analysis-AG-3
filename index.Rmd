@@ -59,33 +59,6 @@ Winter 2023
 
 Create 5 different values from the dataset
 ``````{r, echo = FALSE, code = readLines("summary_info.R")}
-library(dplyr)
-library(ggplot2)
-dataset <- read.csv("Info201 Dataset.csv",stringsAsFactors = FALSE)
-
-summary_info <- list()
-  
-dataset_cleaned <- dataset %>% 
-  filter(AGE >= 1 & AGE <= 100)
-summary_info$average_age <- mean(dataset_cleaned$AGE)
-summary_info$average_age
-
-summary_info$num_ovservations <- nrow(dataset_cleaned)
-summary_info$num_ovservations
-
-cases_F <- dataset_cleaned %>% 
-  filter(SEXNAME == "Female") 
-summary_info$cases_Female <-nrow(cases_F)
-summary_info$cases_Female
-
-cases_M <- dataset_cleaned %>% 
-  filter(SEXNAME == "Male") 
-summary_info$cases_Male <-nrow(cases_M)
-summary_info$cases_Male
-
-summary_info$mean_Severity <- mean(dataset_cleaned$Injury_Severity)
-summary_info$mean_Severity
-
 print(summary_info)
 ```
 
@@ -95,21 +68,8 @@ We have found or calculated five relatively essential values from the database. 
 ### Table
 
 ``````{r, echo = FALSE, code = readLines("table.R")}
-dataset <- read.csv("Info201 Dataset.csv",stringsAsFactors = FALSE)
-library(dplyr)
-
-agg_table <- dataset %>% 
-  group_by(SEXNAME) %>% 
-  summarise(age_1_20 = sum(AGE >= 1 & AGE <= 20),
-            age_21_40 = sum(AGE >= 21 & AGE <= 40),
-            age_41_60 = sum(AGE >= 41 & AGE <= 60),
-            age_61_80 = sum(AGE >= 61 & AGE <= 80),
-            age_81_100 = sum(AGE >= 81 & AGE <= 100)) %>% 
-  arrange(SEXNAME)
-agg_table
-
+View(agg_table)
 ```
-
 
 We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition, we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
 
