@@ -14,6 +14,7 @@ source("Chart3.R")
 ## Project title
 
 Break the Gender & Age Bias in Traffic
+<<<<<<< HEAD
 
 ### Authors
 
@@ -22,54 +23,123 @@ Aaron He,
 ### Date
 
 Winter 2023
+=======
+
+
+### Authors
+
+Jiatao Quan
+
+Lingyue Hao
+
+Aaron He
+
+Meng Sun
+
+
+### Date
+
+2/16/2023
+
+Winter 2023
+
+>>>>>>> b911f5f0a3ac8c9c3d2c706dfa8018b9b25f6d14
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+ 
+
 
 ### Introduction  
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+ 
 
 ### Related Work  
+ 
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+ 
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
-
+ 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+ 
+
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+Create 5 different values from the dataset
+``````{r, echo = FALSE, code = readLines("summary_info.R")}
+library(dplyr)
+library(ggplot2)
+dataset <- read.csv("Info201 Dataset.csv",stringsAsFactors = FALSE)
+
+summary_info <- list()
+  
+dataset_cleaned <- dataset %>% 
+  filter(AGE >= 1 & AGE <= 100)
+summary_info$average_age <- mean(dataset_cleaned$AGE)
+summary_info$average_age
+
+summary_info$num_ovservations <- nrow(dataset_cleaned)
+summary_info$num_ovservations
+
+cases_F <- dataset_cleaned %>% 
+  filter(SEXNAME == "Female") 
+summary_info$cases_Female <-nrow(cases_F)
+summary_info$cases_Female
+
+cases_M <- dataset_cleaned %>% 
+  filter(SEXNAME == "Male") 
+summary_info$cases_Male <-nrow(cases_M)
+summary_info$cases_Male
+
+summary_info$mean_Severity <- mean(dataset_cleaned$Injury_Severity)
+summary_info$mean_Severity
+
+print(summary_info)
+```
+
+We have found or calculated five relatively essential values from the database. First, we found some traffic accidents in the database where the driver was 999 or 0 years old, which is unrealistic. When we culled the database, we found that there were still 82,066 observations. This number indicates that such an extensive database is sufficient to help us complete our analysis and investigation. We also found that the average age of drivers involved in accidents was 40.3 years. This figure is close to our expectations. In addition, we also calculated the number of casualties for male drivers and female drivers in the new database, which were 54,273 cases and 27,716 cases, respectively, reflecting the fact that the total number of accidents for male drivers is much larger than the total number of casualties for female drivers, even twice as many. Finally, we calculated the mean value of driver injuries in these accidents, which was 2.45, suggesting that, excluding individual outliers, there may be more accidents with minor injuries than serious injuries.
+
 
 setwd("/Users/aaron/Desktop")
 np_data <- read.csv("Info201 Dataset.csv")
 ### Table
 
+<<<<<<< HEAD
 
 Include a table of aggregate information
+=======
+``````{r, echo = FALSE, code = readLines("table.R")}
+dataset <- read.csv("Info201 Dataset.csv",stringsAsFactors = FALSE)
+library(dplyr)
 
-Describe why you included the table and what information it reveals
+agg_table <- dataset %>% 
+  group_by(SEXNAME) %>% 
+  summarise(age_1_20 = sum(AGE >= 1 & AGE <= 20),
+            age_21_40 = sum(AGE >= 21 & AGE <= 40),
+            age_41_60 = sum(AGE >= 41 & AGE <= 60),
+            age_61_80 = sum(AGE >= 61 & AGE <= 80),
+            age_81_100 = sum(AGE >= 81 & AGE <= 100)) %>% 
+  arrange(SEXNAME)
+agg_table
+
+```
+
+
+We created this visual table to help us better analyze the relationship and connection between driver age and gender in traffic accidents. It shows that we have some cases in the variable "SEXNAME" that are not counted, in addition to men and women. In addition, we divided the age into five equally spaced intervals that are more reasonable and realistic. These five intervals cover cases where the driver is between 1 and 100 years of age. This table shows that the cases that are not counted do not affect our analysis and investigation compared to the huge database. In addition, we can find that the highest number of traffic accidents is from male drivers between 21 and 40 years old, and the lowest number of casualties is from female drivers between 81 and 100 years old, which is more consistent with our previous expectation.
+
+>>>>>>> b911f5f0a3ac8c9c3d2c706dfa8018b9b25f6d14
+
 
 ### Chart 1
 
@@ -90,9 +160,17 @@ C1
 
 ### Chart 2
 
-Include a chart
-
 Describe why you chose this chart and what information it reveals
+I chose a bar chart to show the frequency of age in the dataset since bar chart is a useful chart for showing the distribution or frequency of a categorical variable.
+
+The information revealed by this chart is the number of instances that each age appeared in the table This can help identify the most common and least common ages in the dataset, and provide insight into the age distribution of the data.
+
+Besides, this chart can also be used to identify any trends or patterns in the age distribution. For example, if there is a large spike in the frequency of a particular age group, this may indicate a specific demographic that is overrepresented in the dataset.
+
+Therefore, a bar chart is a simple and effective way to show the frequency of age in the dataset, and can help provide insight into the age distribution of the data.
+```{r, echo = TRUE, code = readLines("chart2.R")}
+```
+
 
 ### Chart 3
 
