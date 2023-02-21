@@ -1,5 +1,5 @@
 np_data <- read.csv("Info201 Dataset.csv")
-Chart_1 <- np_data %>% group_by(SEXNAME) %>% summarize(Sum_Collision = sum(MAN_COLL))
+Chart_1 <- np_data %>% filter(SEXNAME == "Male" | SEXNAME == "Female") %>% group_by(SEXNAME) %>% summarize(Sum_Collision = sum(MAN_COLL))
 C1 <- ggplot(Chart_1, aes(x="", y=Sum_Collision, fill=SEXNAME)) +
   geom_bar(width=1, stat="identity") +
   coord_polar("y", start=0) +
